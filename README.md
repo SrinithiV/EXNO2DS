@@ -31,31 +31,45 @@ import seaborn as sns
 dt=pd.read_csv("titanic_dataset.csv")
 dt
 ```
+![1](https://github.com/user-attachments/assets/9d92a908-65c8-47ef-9f48-6595a7d4acf9)
+
 ```py
 dt.info()
 ```
+![2](https://github.com/user-attachments/assets/3d313d08-5f80-4445-a927-4cf2a50ef4fc)
+
 ```py
 dt.shape
 ```
-(891, 12)
+ (891, 12)
 
 ```py
 dt.set_index("PassengerId",inplace=True)
 dt
 ```
+![3](https://github.com/user-attachments/assets/15a03ff3-1586-4def-89b6-feedc7cd7746)
+
 ```py
 dt.describe()
 ```
+![4](https://github.com/user-attachments/assets/82b97d40-4a6b-4aee-905f-2c21befea26e)
+
 ```py
 dt.nunique()
 ```
+![5](https://github.com/user-attachments/assets/5aae50ea-65d5-4402-a212-c7689f10db6d)
+
 ```py
 dt["Survived"].value_counts()
 ```
+![6](https://github.com/user-attachments/assets/c3e1d03b-9550-4dd5-b1b2-6f7c3add3a15)
+
 ```py
 per=(dt["Survived"].value_counts()/dt.shape[0]*100).round(2)
 per
 ```
+![7](https://github.com/user-attachments/assets/0c5af530-b92e-4115-afc9-7077e99f7ce3)
+
 ```py
 sns.countplot(data=dt,x="Survived")
 ```
@@ -70,6 +84,8 @@ array([3, 1, 2])
 dt.rename(columns={"Sex":"Gender"},inplace=True)
 dt
 ```
+![8](https://github.com/user-attachments/assets/94ddbc2b-adf6-4123-9ccb-80dee2361a41)
+
 ```py
 sns.catplot(x="Gender",col="Survived",kind="count",data=dt,height=5,aspect=.7)
 ```
